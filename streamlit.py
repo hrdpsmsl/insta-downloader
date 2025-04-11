@@ -362,6 +362,16 @@ load_dotenv()
 API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
+st.markdown(
+    """
+    <style>
+    .stToolbarActions.st-emotion-cache-1p1m4ay.ekuhni82,._profileContainer_gzau3_53 {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.set_page_config(page_title="Gemini Reel Analyzer", layout="wide")
 st.title("Instagram Multi-Reel Analyzer using Gemini")
@@ -639,13 +649,3 @@ if st.session_state.analysis_results:
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
 
-st.markdown(
-    """
-    <style>
-    .stToolbarActions.st-emotion-cache-1p1m4ay.ekuhni82 {
-        display: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
