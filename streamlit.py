@@ -642,9 +642,7 @@ if st.session_state.analysis_results:
 st.markdown(
     """
     <style>
-    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
-    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
-    .viewerBadge_text__1JaDK {
+    .stToolbarActions.st-emotion-cache-1p1m4ay.ekuhni82 {
         display: none;
     }
     </style>
