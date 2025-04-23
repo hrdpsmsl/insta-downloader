@@ -746,16 +746,16 @@ def download_reel(shortcode, target_dir="reels"):
 
 def download_youtube_video(url, output_dir="videos"):
     ydl_opts = {
-        'format': 'bestvideo[height<=360]+bestaudio/best[height<=360]',
+        'format': 'best[height<=360]',  # Updated to avoid separate video/audio
         'outtmpl': os.path.join(output_dir, '%(id)s.%(ext)s'),
-        'merge_output_format': 'mp4',
-        'quiet': True
+        'quiet': True  # Removed 'merge_output_format'
     }
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(url, download=True)
             video_id = info_dict.get("id", "")
-            file_path = os.path.join(output_dir, f"{video_id}.mp4")
+            file_ext = info_dict.get("ext", "mp4")  # Use actual extension
+            file_path = os.path.join(output_dir, f"{video_id}.{file_ext}")
             return file_path, video_id
     except Exception as e:
         st.error(f"Failed to download YouTube video: {e}")
