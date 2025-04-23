@@ -1,3 +1,12 @@
+import subprocess
+
+try:
+    subprocess.run(["ffmpeg", "-version"], check=True)
+    print("✅ FFmpeg is available!")
+except Exception as e:
+    print(f"❌ FFmpeg error: {e}")
+
+
 # import streamlit as st
 # import google.generativeai as genai
 # from google.generativeai import upload_file, get_file
