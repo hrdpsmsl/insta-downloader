@@ -678,33 +678,46 @@ model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 st.set_page_config(page_title="Gemini Video Analyzer", layout="wide")
 st.title("Instagram / YouTube Multi-Video Analyzer using Gemini")
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            ._stateContainer_nim44_26 > div{
-            display:none !important;
-            }
+
+#----------------------Hide Streamlit footer----------------------------
+hide_st_style = “”"
+
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+“”"
+st.markdown(hide_st_style, unsafe_allow_html=True)
+#--------------------------------------------------------------------
+
+
+# hide_streamlit_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             ._stateContainer_nim44_26 > div{
+#             display:none !important;
+#             }
             
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-st.markdown(
-    """
-    <style>
+#             </style>
+#             """
+# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+# st.markdown(
+#     """
+#     <style>
     
-    ._profilePreview_gzau3_63>a{ display: none !important;}
-    ._profileContainer_gzau3_53,._profilePreview_gzau3_63{ display: none !important;}
-    .stToolbarActions.st-emotion-cache-1p1m4ay.ekuhni82 {
-        display: none;
-    }
-    ._profileContainer_gzau3_53 {
-        display: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+#     ._profilePreview_gzau3_63>a{ display: none !important;}
+#     ._profileContainer_gzau3_53,._profilePreview_gzau3_63{ display: none !important;}
+#     .stToolbarActions.st-emotion-cache-1p1m4ay.ekuhni82 {
+#         display: none;
+#     }
+#     ._profileContainer_gzau3_53 {
+#         display: none;
+#     }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
 
 # Session state setup
 if 'videos' not in st.session_state:
