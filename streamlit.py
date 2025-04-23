@@ -681,7 +681,8 @@ st.title("Instagram / YouTube Multi-Video Analyzer using Gemini")
 st.markdown(
     """
     <style>
-    ._profileContainer_gzau3_53{ display: none !important;}
+    ._profilePreview_gzau3_63>a{ display: none !important;}
+    ._profileContainer_gzau3_53,._profilePreview_gzau3_63{ display: none !important;}
     .stToolbarActions.st-emotion-cache-1p1m4ay.ekuhni82 {
         display: none;
     }
