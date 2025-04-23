@@ -678,6 +678,13 @@ model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 st.set_page_config(page_title="Gemini Video Analyzer", layout="wide")
 st.title("Instagram / YouTube Multi-Video Analyzer using Gemini")
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown(
     """
     <style>
