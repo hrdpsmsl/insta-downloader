@@ -680,13 +680,13 @@ st.set_page_config(page_title="Gemini Video Analyzer", layout="wide")
 st.title("Instagram / YouTube Multi-Video Analyzer using Gemini")
 
 #----------------------Hide Streamlit footer----------------------------
-hide_st_style = “”"
+hide_st_style = """
 
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
-“”"
+"""
 st.markdown(hide_st_style, unsafe_allow_html=True)
 #--------------------------------------------------------------------
 
